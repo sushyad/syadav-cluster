@@ -17,6 +17,9 @@ spec:
   install:
     remediation:
       retries: 3
+  dependsOn:
+    - name: rook-ceph
+      namespace: rook-ceph-system
   upgrade:
     remediation:
       retries: -1 # keep trying to remediate

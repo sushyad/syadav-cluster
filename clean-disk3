@@ -1,16 +1,16 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: disk-clean
+  name: disk-clean3
 spec:
   restartPolicy: Never
-  nodeName: node-2
+  nodeName: node-3
   volumes:
   - name: rook-data-dir
     hostPath:
       path: /var/lib/rook
   containers:
-  - name: disk-clean
+  - name: disk-clean3
     image: busybox
     securityContext:
       privileged: true

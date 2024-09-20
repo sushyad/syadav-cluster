@@ -204,14 +204,14 @@ data:
 
       # enable the crash collector for ceph daemon crash collection
       crashCollector:
-        disable: false
+        disable: true
         # Uncomment daysToRetain to prune ceph crash entries older than the
         # specified number of days.
         # daysToRetain: 30
 
       # enable log collector, daemons will log on files and rotate
       logCollector:
-        enabled: true
+        enabled: false
         periodicity: daily # one of: hourly, daily, weekly, monthly
         maxLogSize: 500M # SUFFIX may be 'M' or 'G'. Must be at least 1M.
 
@@ -300,16 +300,16 @@ data:
             memory: "512Mi"
         mon:
           limits:
+            memory: "1Gi"
+          requests:
+            cpu: "1000m"
+            memory: "512Mi"
+        osd:
+          limits:
             memory: "2Gi"
           requests:
             cpu: "1000m"
-            memory: "1Gi"
-        osd:
-          limits:
-            memory: "4Gi"
-          requests:
-            cpu: "1000m"
-            memory: "4Gi"
+            memory: "2Gi"
         prepareosd:
           # limits: It is not recommended to set limits on the OSD prepare job
           #         since it's a one-time burst for memory that must be allowed to

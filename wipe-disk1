@@ -4,10 +4,10 @@ metadata:
   name: disk-wipe1
 spec:
   restartPolicy: Never
-  nodeName: node-3
+  nodeName: node-1
   containers:
   - name: disk-wipe1
     image: busybox
     securityContext:
       privileged: true
-    command: ["/bin/sh", "-c", "dd if=/dev/zero bs=1M count=100 oflag=direct of=/dev/sdb"]
+    command: ["/bin/sh", "-c", "dd if=/dev/zero bs=1M count=100 oflag=direct of=/dev/sdb && dd if=/dev/zero bs=1M count=100 oflag=direct of=/dev/nvme0n1"]

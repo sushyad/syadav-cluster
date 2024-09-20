@@ -1,0 +1,26 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: ceph-test-2
+  labels:
+    test: ceph
+    funkypenguin-is: a-smartass
+spec:
+  containers:
+  - name: volume-test
+    image: nginx:stable-alpine
+    imagePullPolicy: IfNotPresent
+    volumeMounts:
+    - name: ceph-block-is-rwo
+      mountPath: /rwo
+    - name: ceph-filesystem-is-rwx
+      mountPath: /rwx
+    ports:
+    - containerPort: 80
+  volumes:
+  - name: ceph-block-is-rwo
+    persistentVolumeClaim:
+      claimName: ceph-block-pvc-2
+  - name: ceph-filesystem-is-rwx
+    persistentVolumeClaim:
+      claimName: ceph-filesystem-pvc

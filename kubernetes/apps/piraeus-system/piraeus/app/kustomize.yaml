@@ -6,7 +6,7 @@ metadata:
   namespace: flux-system
 spec:
   interval: 2m0s
-  path: ./config/default
+  path: "./config/default"
   prune: true
   retryInterval: 2m0s
   sourceRef:

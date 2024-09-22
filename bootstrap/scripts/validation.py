@@ -54,7 +54,7 @@ def validate_node(node: dict, node_cidr: str) -> None:
         raise ValueError(f"A node is missing a name")
     if not re.match(r"^[a-z0-9-]+$", node.get('name')):
         raise ValueError(f"Node {node.get('name')} has an invalid name")
-    if not node.get("disk"):
+    if not node.get("disk") and not node.get("model"):
         raise ValueError(f"Node {node.get('name')} is missing disk")
     if not node.get("mac_addr"):
         raise ValueError(f"Node {node.get('name')} is missing mac_addr")

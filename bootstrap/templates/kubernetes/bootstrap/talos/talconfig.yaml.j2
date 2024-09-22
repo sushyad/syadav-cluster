@@ -27,7 +27,10 @@ nodes:
   #% for item in bootstrap_node_inventory %#
   - hostname: "#{ item.name }#"
     ipAddress: "#{ item.address }#"
-    #% if item.disk.startswith('/') %#
+    #% if item.model %#
+    installDiskSelector:
+      model: "#{ item.model }#"
+    #% elif item.disk.startswith('/') %#
     installDisk: "#{ item.disk }#"
     #% else %#
     installDiskSelector:

@@ -8,4 +8,4 @@ spec:
   interval: 1h
   url: https://github.com/piraeusdatastore/piraeus-operator
   ref:
-    branch: v2
+    branch: v2.6.0

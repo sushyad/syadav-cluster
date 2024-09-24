@@ -8,13 +8,13 @@ machine:
   disks:
       - device: /dev/nvme0n1
         partitions:
-          - mountpoint: /var/openebs/local
+          - mountpoint: /var/openebs/replicated
 
   kubelet:
     extraMounts:
-      - destination: /var/openebs/local
+      - destination: /var/openebs/replicated
         type: bind
-        source: /var/openebs/local
+        source: /var/openebs/replicated
         options:
           - bind
           - rshared

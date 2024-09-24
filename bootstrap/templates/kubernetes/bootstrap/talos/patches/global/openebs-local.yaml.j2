@@ -1,4 +1,9 @@
 machine:
+  disks:
+      - device: /dev/sdb
+        partitions:
+          - mountpoint: /var/openebs/local
+
   kubelet:
     extraMounts:
       - destination: /var/openebs/local

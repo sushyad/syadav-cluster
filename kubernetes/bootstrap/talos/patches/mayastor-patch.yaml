@@ -1,0 +1,18 @@
+- op: replace
+  path: /machine/disks/0/device
+  value: /dev/sdb
+
+- op: add
+  path: /machine/disks
+  values:
+    device: /dev/nvme0n1
+    partitions:
+      - mountpoint: /var/openebs/replicated
+
+- op: replace
+  path: /machine/kubelet/extraMounts/1/destination
+  value: /var/openebs/replicated
+
+- op: replace
+  path: /machine/kubelet/extraMounts/1/source
+  value: /var/openebs/replicated

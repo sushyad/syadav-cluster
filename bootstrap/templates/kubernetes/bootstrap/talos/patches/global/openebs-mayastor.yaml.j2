@@ -4,18 +4,3 @@ machine:
 
   nodeLabels:
      openebs.io/engine: mayastor
-
-  disks:
-      - device: /dev/nvme0n1
-        partitions:
-          - mountpoint: /var/openebs/replicated
-
-  kubelet:
-    extraMounts:
-      - destination: /var/openebs/replicated
-        type: bind
-        source: /var/openebs/replicated
-        options:
-          - bind
-          - rshared
-          - rw

@@ -35,13 +35,15 @@ spec:
       replicated:
         mayastor:
           enabled: true
-          resources:
-            limits:
-              cpu: 1
-              memory: 1Gi
-            requests:
-              cpu: 1
-              memory: 1Gi
+          image:
+            io-engine:
+              resources:
+                limits:
+                  cpu: 1
+                  memory: 1Gi
+                requests:
+                  cpu: 1
+                  memory: 1Gi
     openebs-crds:
       csi:
         volumeSnapshots:

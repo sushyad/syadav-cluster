@@ -3,4 +3,5 @@ kind: LinstorCluster
 metadata:
   name: linstorcluster
   namespace: piraeus-system
-spec: {}
+spec:
+  nam

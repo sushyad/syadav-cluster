@@ -101,7 +101,6 @@ patches:
   - "@./patches/global/kubelet.yaml"
   - "@./patches/global/linstor.yaml"
   - "@./patches/global/openebs-local.yaml"
-  - "@./patches/global/openebs-mayastor-patch.yaml"
   - "@./patches/global/openebs-mayastor.yaml"
   - "@./patches/global/sysctl.yaml"
 
@@ -111,4 +110,5 @@ controlPlane:
     - "@./patches/controller/api-access.yaml"
     - "@./patches/controller/cluster.yaml"
     - "@./patches/controller/etcd.yaml"
+    - "@./patches/controller/openebs-mayastor-patch.yaml"
 

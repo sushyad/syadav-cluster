@@ -1,0 +1,19 @@
+- op: add
+  path: /machine/nodeLabels
+  value:
+     node.longhorn.io/create-default-disk: config
+     
+- op: add
+  path: /machine/nodeAnnotations
+  value:
+    node.longhorn.io/default-disks-config: |
+      [
+        {
+          "name": "nvme",
+          "path":"/var/mnt/storage1"
+        },
+        {
+          "name":"ssd",
+          "path":"/var/mnt/storage2"
+        }
+      ]

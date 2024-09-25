@@ -1,5 +1,5 @@
 - op: add
-  path: /machine/kernel
+  path: /machine/disks
   value:
     modules:
       - name: drbd

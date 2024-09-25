@@ -1,4 +1,19 @@
 machine:
+  nodeLabels:
+    node.longhorn.io/create-default-disk: config
+  nodeAnnotations:
+    node.longhorn.io/default-disks-config: |
+      [
+        {
+          "name": "nvme",
+          "path":"/var/mnt/storage1"
+        },
+        {
+          "name":"ssd",
+          "path":"/var/mnt/storage2"
+        }
+      ]
+
   kubelet:
     extraMounts:
       - destination: /var/mnt/storage1

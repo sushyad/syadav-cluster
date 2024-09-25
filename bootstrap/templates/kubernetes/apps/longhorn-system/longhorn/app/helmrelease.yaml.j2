@@ -23,3 +23,7 @@ spec:
   values:
     defaultSettings:
       defaultDataPath: /var/mnt/storage1
+  valuesFrom:
+    - kind: ConfigMap
+      name: longhorn-helm-chart-value-overrides
+      valuesKey: values.yaml

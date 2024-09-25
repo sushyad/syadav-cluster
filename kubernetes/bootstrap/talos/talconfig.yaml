@@ -25,7 +25,7 @@ nodes:
     ipAddress: "192.168.40.5"
     installDiskSelector:
       model: "RTL9210B-CG"
-    talosImageURL: factory.talos.dev/installer/3627b0e00029d1dc6eb5b3d1ad6061120769655f9d0bedbe8b74d8f35c4983e7
+    talosImageURL: factory.talos.dev/installer/613e1592b2da41ae5e265e8789429f22e121aab91cb4deb6bc3c0b6262961245
     controlPlane: true
     networkInterfaces:
       - deviceSelector:
@@ -43,7 +43,7 @@ nodes:
     ipAddress: "192.168.40.6"
     installDiskSelector:
       model: "RTL9210B-CG"
-    talosImageURL: factory.talos.dev/installer/3627b0e00029d1dc6eb5b3d1ad6061120769655f9d0bedbe8b74d8f35c4983e7
+    talosImageURL: factory.talos.dev/installer/613e1592b2da41ae5e265e8789429f22e121aab91cb4deb6bc3c0b6262961245
     controlPlane: true
     networkInterfaces:
       - deviceSelector:
@@ -61,7 +61,7 @@ nodes:
     ipAddress: "192.168.40.7"
     installDiskSelector:
       model: "RTL9210B-CG"
-    talosImageURL: factory.talos.dev/installer/3627b0e00029d1dc6eb5b3d1ad6061120769655f9d0bedbe8b74d8f35c4983e7
+    talosImageURL: factory.talos.dev/installer/613e1592b2da41ae5e265e8789429f22e121aab91cb4deb6bc3c0b6262961245
     controlPlane: true
     networkInterfaces:
       - deviceSelector:
@@ -79,7 +79,7 @@ nodes:
     ipAddress: "192.168.40.8"
     installDiskSelector:
       model: "RTL9210B-CG"
-    talosImageURL: factory.talos.dev/installer/3627b0e00029d1dc6eb5b3d1ad6061120769655f9d0bedbe8b74d8f35c4983e7
+    talosImageURL: factory.talos.dev/installer/613e1592b2da41ae5e265e8789429f22e121aab91cb4deb6bc3c0b6262961245
     controlPlane: false
     networkInterfaces:
       - deviceSelector:
@@ -99,9 +99,7 @@ patches:
   - "@./patches/global/disable-search-domain.yaml"
   - "@./patches/global/hostdns.yaml"
   - "@./patches/global/kubelet.yaml"
-  - "@./patches/global/linstor.yaml"
-  - "@./patches/global/openebs-local.yaml"
-  - "@./patches/global/openebs-mayastor.yaml"
+  - "@./patches/global/longhorn.yaml"
   - "@./patches/global/sysctl.yaml"
 
 # Controller patches

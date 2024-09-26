@@ -23,3 +23,6 @@ spec:
   valuesFrom:
     - kind: ConfigMap
       name: longhorn-helm-chart-value-overrides
+  values:
+    defaultSettings:
+      createDefaultDiskLabeledNodes: true

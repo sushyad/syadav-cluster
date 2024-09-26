@@ -6,11 +6,13 @@ machine:
       [
         {
           "name": "nvme",
-          "path":"/var/mnt/storage1"
+          "path":"/var/mnt/storage1",
+          "allowScheduling": true
         },
         {
           "name":"ssd",
-          "path":"/var/mnt/storage2"
+          "path":"/var/mnt/storage2",
+          "allowScheduling": true
         }
       ]
 

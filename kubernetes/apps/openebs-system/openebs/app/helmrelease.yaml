@@ -34,7 +34,7 @@ spec:
           enabled: false
       replicated:
         mayastor:
-          enabled: true
+          enabled: false
           image:
             io-engine:
               resources:

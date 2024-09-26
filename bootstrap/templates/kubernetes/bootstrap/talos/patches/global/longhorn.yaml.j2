@@ -5,13 +5,8 @@ machine:
     node.longhorn.io/default-disks-config: |
       [
         {
-          "name": "nvme",
-          "path":"/var/mnt/storage1",
-          "allowScheduling": true
-        },
-        {
           "name":"ssd",
-          "path":"/var/mnt/storage2",
+          "path":"/var/mnt/storage1",
           "allowScheduling": true
         }
       ]
@@ -25,17 +20,8 @@ machine:
           - bind
           - rshared
           - rw
-      - destination: /var/mnt/storage2
-        type: bind
-        source: /var/mnt/storage2
-        options:
-          - bind
-          - rshared
-          - rw
+
   disks:
-    - device: /dev/nvme0n1
-      partitions:
-        - mountpoint: /var/mnt/storage1
     - device: /dev/sdb
       partitions:
         - mountpoint: /var/mnt/storage2

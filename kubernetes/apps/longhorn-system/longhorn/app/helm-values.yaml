@@ -1,2 +1,2 @@
 ---
-create-default-disk-labeled-nodes: true
+createDefaultDiskLabeledNodes: true

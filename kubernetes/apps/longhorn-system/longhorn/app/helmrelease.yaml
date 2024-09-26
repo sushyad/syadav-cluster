@@ -22,7 +22,7 @@ spec:
       retries: 3
   valuesFrom:
     - kind: ConfigMap
-      name: longhorn-helm-chart-value-overrides
+      name: longhorn-helm-values
   values:
     defaultSettings:
       createDefaultDiskLabeledNodes: true

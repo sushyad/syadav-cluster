@@ -7,7 +7,7 @@ spec:
   interval: 30m
   chart:
     spec:
-      chart: nginx
+      chart: nginx-oci
       sourceRef:
         kind: HelmRepository
         name: nginx

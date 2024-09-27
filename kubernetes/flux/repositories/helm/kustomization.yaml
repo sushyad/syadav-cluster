@@ -17,3 +17,4 @@ resources:
   - ./openebs.yaml
   - ./longhorn.yaml
   - ./bitnami.yaml
+  - ./mysql.yaml

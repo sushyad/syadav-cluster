@@ -2,9 +2,9 @@
 apiVersion: source.toolkit.fluxcd.io/v1
 kind: OCIRepository
 metadata:
-  name: mysql
+  name: mariadb-operator
   namespace: flux-system
 spec:
   interval: 1h
-  url: oci://registry-1.docker.io/bitnamicharts/mysql
+  url: https://helm.mariadb.com/mariadb-operator
 

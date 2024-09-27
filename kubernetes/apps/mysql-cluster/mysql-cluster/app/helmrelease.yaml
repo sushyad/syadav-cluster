@@ -8,11 +8,11 @@ spec:
   interval: 30m
   chart:
     spec:
-      chart: mysql
+      chart: mariadb-operator
       version: "*"
       sourceRef:
         kind: HelmRepository
-        name: bitnami
+        name: mariadb-operator
         namespace: flux-system
       interval: 12h
   install:

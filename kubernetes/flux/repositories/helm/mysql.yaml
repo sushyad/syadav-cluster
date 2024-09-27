@@ -7,14 +7,5 @@ metadata:
 spec:
   interval: 1h
   url: https://helm.mariadb.com/mariadb-operator
----
-apiVersion: source.toolkit.fluxcd.io/v1
-kind: HelmRepository
-metadata:
-  name: mariadb-operator-crds
-  namespace: flux-system
-spec:
-  interval: 1h
-  url: https://helm.mariadb.com/mariadb-operator
 
 

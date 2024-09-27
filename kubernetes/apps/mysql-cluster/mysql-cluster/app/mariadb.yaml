@@ -4,9 +4,9 @@ metadata:
   name: mariadb
 spec:
   rootPasswordSecretKeyRef:
-    name: mariadb
-    key: password
-    generate: false
+    # name: mariadb
+    # key: password
+    generate: true
 
   storage:
     size: 1Gi

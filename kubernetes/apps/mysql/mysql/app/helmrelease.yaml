@@ -9,7 +9,7 @@ spec:
     spec:
       chart: mysql
       sourceRef:
-        kind: HelmRepository
+        kind: OCIRepository
         name: mysql
         namespace: flux-system
   install:

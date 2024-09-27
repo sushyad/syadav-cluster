@@ -1,0 +1,42 @@
+Pulled: registry-1.docker.io/bitnamicharts/postgresql-ha:14.2.31
+Digest: sha256:f51a82608e19b3e904bf5c9aee7a725f8e1606c1aed699974fb504aabdea40b9
+NAME: postgresql-release
+LAST DEPLOYED: Fri Sep 27 19:45:41 2024
+NAMESPACE: db-system
+STATUS: deployed
+REVISION: 1
+TEST SUITE: None
+NOTES:
+CHART NAME: postgresql-ha
+CHART VERSION: 14.2.31
+APP VERSION: 16.4.0
+** Please be patient while the chart is being deployed **
+PostgreSQL can be accessed through Pgpool via port 5432 on the following DNS name from within your cluster:
+
+    postgresql-release-postgresql-ha-pgpool.db-system.svc.cluster.local
+
+Pgpool acts as a load balancer for PostgreSQL and forward read/write connections to the primary node while read-only connections are forwarded to standby nodes.
+
+To get the password for "postgres" run:
+
+    export POSTGRES_PASSWORD=$(kubectl get secret --namespace db-system postgresql-release-postgresql-ha-postgresql -o jsonpath="{.data.password}" | base64 -d)
+
+To get the password for "repmgr" run:
+
+    export REPMGR_PASSWORD=$(kubectl get secret --namespace db-system postgresql-release-postgresql-ha-postgresql -o jsonpath="{.data.repmgr-password}" | base64 -d)
+
+To connect to your database run the following command:
+
+    kubectl run postgresql-release-postgresql-ha-client --rm --tty -i --restart='Never' --namespace db-system --image docker.io/bitnami/postgresql-repmgr:16.4.0-debian-12-r18 --env="PGPASSWORD=$POSTGRES_PASSWORD"  \
+        --command -- psql -h postgresql-release-postgresql-ha-pgpool -p 5432 -U postgres -d postgres
+
+To connect to your database from outside the cluster execute the following commands:
+
+    kubectl port-forward --namespace db-system svc/postgresql-release-postgresql-ha-pgpool 5432:5432 &
+    psql -h 127.0.0.1 -p 5432 -U postgres -d postgres
+
+WARNING: There are "resources" sections in the chart not set. Using "resourcesPreset" is not recommended for production. For production installations, please set the following values according to your workload needs:
+  - pgpool.resources
+  - postgresql.resources
+  - witness.resources
++info https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/

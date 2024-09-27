@@ -5,11 +5,11 @@ metadata:
   name: &app nginx
   namespace: flux-system
 spec:
-  targetNamespace: nginx
+  targetNamespace: db-system
   commonMetadata:
     labels:
       app.kubernetes.io/name: *app
-  path: ./kubernetes/apps/nginx/nginx/app
+  path: ./kubernetes/apps/mysql/mysql/app
   prune: true
   sourceRef:
     kind: GitRepository

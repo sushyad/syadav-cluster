@@ -7,3 +7,5 @@ metadata:
 spec:
   interval: 5m0s
   url: oci://registry-1.docker.io/bitnamicharts/nginx
+  ref:
+    tag: 1.27.1

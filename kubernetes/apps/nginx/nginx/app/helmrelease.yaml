@@ -8,6 +8,7 @@ spec:
   chart:
     spec:
       chart: nginx
+      version: 1.27.1
       sourceRef:
         kind: OCIRepository
         name: nginx

@@ -7,10 +7,10 @@ spec:
   interval: 30m
   chart:
     spec:
-      chart: mysql-operator
+      chart: mysql
       sourceRef:
         kind: HelmRepository
-        name: mysql-operator
+        name: mysql
         namespace: flux-system
   install:
     remediation:

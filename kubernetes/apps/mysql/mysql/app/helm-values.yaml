@@ -1,2 +1,2 @@
 ---
-serviceFqdnTemplate: "{service}.{namespace}.svc.yadapiz.com"
+serviceFqdnTemplate: "mysql.db-system.svc.yadapiz.com"

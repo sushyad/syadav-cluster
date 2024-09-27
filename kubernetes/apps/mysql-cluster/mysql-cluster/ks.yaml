@@ -2,14 +2,14 @@
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
-  name: &app nginx
+  name: &app mysql-cluster
   namespace: flux-system
 spec:
   targetNamespace: db-system
   commonMetadata:
     labels:
       app.kubernetes.io/name: *app
-  path: ./kubernetes/apps/mysql/mysql/app
+  path: ./kubernetes/apps/mysql-cluster/mysql-cluster/app
   prune: true
   sourceRef:
     kind: GitRepository

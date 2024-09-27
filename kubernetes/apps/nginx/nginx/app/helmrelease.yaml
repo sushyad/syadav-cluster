@@ -10,7 +10,7 @@ spec:
       chart: nginx
       sourceRef:
         kind: OCIRepository
-        name: bitnami
+        name: nginx
         namespace: flux-system
   install:
     remediation:

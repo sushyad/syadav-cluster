@@ -7,10 +7,10 @@ spec:
   interval: 30m
   chart:
     spec:
-      chart: nginx
+      chart: bitnami/nginx
       sourceRef:
-        kind: OCIRepository
-        name: nginx
+        kind: HelmRepository
+        name: bitnami
         namespace: flux-system
   install:
     remediation:

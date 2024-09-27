@@ -16,3 +16,4 @@ resources:
   - ./k8s-gateway.yaml
   - ./openebs.yaml
   - ./longhorn.yaml
+  - ./bitnami.yaml

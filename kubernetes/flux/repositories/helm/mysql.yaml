@@ -6,7 +6,7 @@ metadata:
   namespace: flux-system
 spec:
   interval: 1h
-  url: https://helm.mariadb.com/mariadb-operator/mariadb-operator
+  url: https://helm.mariadb.com
 ---
 apiVersion: source.toolkit.fluxcd.io/v1
 kind: HelmRepository
@@ -15,6 +15,6 @@ metadata:
   namespace: flux-system
 spec:
   interval: 1h
-  url: https://helm.mariadb.com/mariadb-operator/mariadb-operator-crds
+  url: https://helm.mariadb.com
 
 

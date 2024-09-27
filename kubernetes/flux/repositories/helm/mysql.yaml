@@ -1,6 +1,6 @@
 ---
 apiVersion: source.toolkit.fluxcd.io/v1
-kind: OCIRepository
+kind: HelmRepository
 metadata:
   name: mariadb-operator
   namespace: flux-system
@@ -9,7 +9,7 @@ spec:
   url: https://helm.mariadb.com/mariadb-operator/mariadb-operator
 ---
 apiVersion: source.toolkit.fluxcd.io/v1
-kind: OCIRepository
+kind: HelmRepository
 metadata:
   name: mariadb-operator-crds
   namespace: flux-system

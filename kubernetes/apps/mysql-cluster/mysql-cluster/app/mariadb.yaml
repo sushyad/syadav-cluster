@@ -3,10 +3,17 @@ kind: MariaDB
 metadata:
   name: mariadb
 spec:
-  # rootPasswordSecretKeyRef:
-  #   name: mariadb
-  #   key: password
-  #   generate: false
+  rootPasswordSecretKeyRef:
+    name: mariadb-root
+    key: password
+    generate: true
+
+  username: mariadb
+  passwordSecretKeyRef:
+    name: mariadb-password
+    key: password
+    generate: true
+  database: mariadb
 
   storage:
     size: 1Gi

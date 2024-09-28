@@ -52,3 +52,6 @@ spec:
 
   metrics:
     enabled: true
+
+  updateStrategy:
+    type: RollingUpdate

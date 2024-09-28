@@ -25,11 +25,12 @@ metadata:
   name: &app mysql-cluster
   namespace: flux-system
 spec:
-  dependsOn: mysql-operator
   targetNamespace: db-system
   commonMetadata:
     labels:
       app.kubernetes.io/name: *app
+  dependsOn:
+    - name: mysql-operator
   path: ./kubernetes/apps/mysql-cluster/mysql-cluster/cluster
   prune: true
   sourceRef:

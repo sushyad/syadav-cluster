@@ -1,1 +1,7 @@
 ---
+storage:
+  storageClassName: openebs-hostpath
+
+galera:
+  config:
+    reuseStorageVolume: true

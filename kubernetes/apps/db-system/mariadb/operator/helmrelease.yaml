@@ -29,6 +29,8 @@ metadata:
   name: mariadb-operator
   namespace: db-system
 spec:
+  dependsOn:
+    - name: mariadb-operator-crds
   interval: 30m
   chart:
     spec:
@@ -39,8 +41,6 @@ spec:
         name: mariadb-operator
         namespace: flux-system
       interval: 12h
-      dependsOn:
-        - name: mariadv-operator-crds
   install:
     remediation:
       retries: 3

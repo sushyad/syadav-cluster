@@ -2,14 +2,14 @@
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
-  name: &app mysql-operator
+  name: &app mariadb-operator
   namespace: flux-system
 spec:
   targetNamespace: db-system
   commonMetadata:
     labels:
       app.kubernetes.io/name: *app
-  path: ./kubernetes/apps/mysql-cluster/mysql-cluster/operator
+  path: ./kubernetes/apps/db-system/mariadb/operator
   prune: true
   sourceRef:
     kind: GitRepository
@@ -22,7 +22,7 @@ spec:
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
-  name: &app mysql-cluster
+  name: &app mariadb-cluster
   namespace: flux-system
 spec:
   targetNamespace: db-system
@@ -30,8 +30,8 @@ spec:
     labels:
       app.kubernetes.io/name: *app
   dependsOn:
-    - name: mysql-operator
-  path: ./kubernetes/apps/mysql-cluster/mysql-cluster/cluster
+    - name: mariadb-operator
+  path: ./kubernetes/apps/db-system/mariadb/cluster
   prune: true
   sourceRef:
     kind: GitRepository

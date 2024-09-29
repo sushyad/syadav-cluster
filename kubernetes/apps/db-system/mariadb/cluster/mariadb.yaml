@@ -8,12 +8,12 @@ spec:
     key: root_password
     generate: true
 
-  # username: mariadb
-  # passwordSecretKeyRef:
-  #   name: mariadb-secrets
-  #   key: user_password
-  #   generate: true
-  # database: mariadb
+  username: mariadb
+  passwordSecretKeyRef:
+    name: mariadb-secrets
+    key: user_password
+    generate: true
+  database: mariadb
 
   storage:
     size: 1Gi

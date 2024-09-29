@@ -4,4 +4,4 @@ kind: Kustomization
 resources:
   - ./secret.sops.yaml
   - ./mariadb_user.yaml
-  # - ./mariadb.yaml
+  - ./mariadb.yaml

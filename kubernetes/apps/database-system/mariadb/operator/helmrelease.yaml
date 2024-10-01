@@ -3,7 +3,7 @@ apiVersion: helm.toolkit.fluxcd.io/v2beta2
 kind: HelmRelease
 metadata:
   name: mariadb-operator-crds
-  namespace: db-system
+  namespace: database-system
 spec:
   interval: 30m
   chart:
@@ -27,7 +27,7 @@ apiVersion: helm.toolkit.fluxcd.io/v2beta2
 kind: HelmRelease
 metadata:
   name: mariadb-operator
-  namespace: db-system
+  namespace: database-system
 spec:
   dependsOn:
     - name: mariadb-operator-crds

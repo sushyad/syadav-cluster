@@ -3,7 +3,8 @@ kind: User
 metadata:
   name: user
 spec:
-  database: mariadb
+  mariaDbRef:
+    name: mariadb
 
   passwordSecretKeyRef:
     name: mariadb-secrets
